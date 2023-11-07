@@ -31,7 +31,7 @@
                             href="{% url 'index' %}">Home</a></li>
                 </ul>
                 <form class="d-flex" role="search" action="{% url 'index' %}" method="get">
-                    <input class="form-control me-2" type="search" placeholder="Amigos" aria-label="Search" name="q">
+                    <input class="form-control me-2" type="search" placeholder="Quadras" aria-label="Search" name="q">
                     <button class="btn btn-outline-success" type="submit">Pesquisa</button>
                 </form>
             </div>
@@ -44,6 +44,7 @@
                 <img src="{% static 'img/futsal.png' %}" alt="" width="100">
                 <h1 class="display-4 fw-bolder">Quadra</h1>
                 <p class="lead fw-normal text-white-50 mb-0">Gerenciar quadra on-line!</p>
+                <a class="btn btn-primary" href="#" role="button">Baixe aqui</a>
             </div>
         </div>
     </header>
@@ -51,7 +52,7 @@
     <section class="py-5">
         <div class="container px-4 px-lg-5 mt-5">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                {% for amigo in amigos %}
+                {% for amigo in quadras %}
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
@@ -60,7 +61,7 @@
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <!-- Product name-->
-                                <h5 class="fw-bolder">{{ amigo.nome}}</h5>
+                                <h5 class="fw-bolder">{{ quadras.nome}}</h5>
                                 <!-- Product price-->
                                 <!-- <h5 class="fw-bolder">{{ amigo.whatsapp}}</h5> -->
                             </div>
@@ -68,7 +69,7 @@
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <div class="text-center"><a class="btn btn-outline-dark mt-auto"
-                                    href="{% url 'detalhar' amigo.id %}">Info</a>
+                                    href="{% url 'detalhar' quadras.id %}">Info</a>
                             </div>
                         </div>
                     </div>
